@@ -1068,6 +1068,7 @@ MonoBehaviour:
   _splitDivider: 2
   _minAmountSpawnCube: 2
   _maxAmountSpawnCube: 7
+  _cubePrefab: {fileID: 2107327213}
 --- !u!114 &2107327221
 MonoBehaviour:
   m_ObjectHideFlags: 0

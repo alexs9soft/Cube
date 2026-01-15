@@ -1,46 +1,13 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
-    [SerializeField] private float _explosionRadius;
-    [SerializeField] private float _explosionForce;
+    [SerializeField] private float _splitChance;
 
-    public event Action MouseClick;
-    
-    private void OnMouseUpAsButton()
-    {
-        MouseClick?.Invoke();
+    public float GetSplitChance() => _splitChance;
 
-        Explosion();
-
-        Destroy(gameObject);
-    }
-
-    private void Explosion()
-    {
-        foreach (Rigidbody exploisionObjects in GetExplosionObjects())
-        {
-            exploisionObjects.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
-        }
-    }
-
-    private List<Rigidbody> GetExplosionObjects()
-    {
-        Collider[] hits = Physics.OverlapSphere(transform.position, _explosionRadius);
-
-        List<Rigidbody> cubes = new();
-
-        foreach (Collider hit in hits)
-        {
-            if (hit.attachedRigidbody != null)
-            {
-                cubes.Add(hit.attachedRigidbody);
-            }
-        }
-
-        return cubes;
+    public void SetNewSplitChance(float value)
+    { 
+        _splitChance = value;
     }
 }
