@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RaycastHandler : MonoBehaviour
@@ -18,10 +19,12 @@ public class RaycastHandler : MonoBehaviour
 
     private void PullsStrings(Cube objectHit)
     {
+        List<Cube> cubes = new List<Cube>();
+
         if (CalculateChanceSpawnObjects(objectHit))
         {
-            _spawner.Spawn(objectHit);
-            _detonarot.Explosion(objectHit);
+            cubes = _spawner.Spawn(objectHit);
+            _detonarot.Explosion(cubes);
             _spawner.Delete(objectHit);
         }
         else

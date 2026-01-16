@@ -11,12 +11,16 @@ public class CubeSpawner : MonoBehaviour
 
     [SerializeField] private Cube _cube;
 
-    public void Spawn(Cube spawnCube)
+    public List<Cube> Spawn(Cube spawnCube)
     {
+        List<Cube> cubes = new List<Cube>();
+
         for (int i = UserUtils.GenerateRandomNumber(_minAmountSpawnCube, _maxAmountSpawnCube); i > 0; i--)
         {
-            Create(spawnCube);
+            cubes.Add(Create(spawnCube));
         }
+
+        return cubes;
     }
 
     public void Delete(Cube deleteCube)
@@ -35,7 +39,7 @@ public class CubeSpawner : MonoBehaviour
         }
     }
 
-    private void Create(Cube createObject)
+    private Cube Create(Cube createObject)
     {
         Color color = Random.ColorHSV();
         Vector3 scale = createObject.transform.localScale * _splitScale;
@@ -44,5 +48,7 @@ public class CubeSpawner : MonoBehaviour
 
         Cube cube = Instantiate(createObject);
         cube.Initialize(scale, color, splitChance);
+
+        return cube;
     }
 }
