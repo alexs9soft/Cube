@@ -9,11 +9,9 @@ public class CubeSpawner : MonoBehaviour
     [SerializeField] private int _minAmountSpawnCube;
     [SerializeField] private int _maxAmountSpawnCube;
 
-    [SerializeField] private GameObject _cubePrefab;
+    [SerializeField] private Cube _cube;
 
-    private List<GameObject> _cubes = new List<GameObject>();
-
-    public void Spawn(GameObject spawnCube)
+    public void Spawn(Cube spawnCube)
     {
         for (int i = UserUtils.GenerateRandomNumber(_minAmountSpawnCube, _maxAmountSpawnCube); i > 0; i--)
         {
@@ -21,32 +19,30 @@ public class CubeSpawner : MonoBehaviour
         }
     }
 
-    public void Delete(GameObject deleteCube)
+    public void Delete(Cube deleteCube)
     {
-        _cubes.Remove(deleteCube);
-        Destroy(deleteCube);
+        Destroy(deleteCube.gameObject);
     }
 
     private void Start()
     {
         for (int i = 0; i < _maxAmountSpawnCube; i++)
         {
-            GameObject cube = Instantiate(_cubePrefab);
-            cube.transform.position = new Vector3(i + _maxAmountSpawnCube, _minAmountSpawnCube, _maxAmountSpawnCube + i);
-            cube.GetComponent<Renderer>().material.color = Random.ColorHSV();
-            _cubes.Add(cube);
-        }
+            Cube cube = Instantiate(_cube);
 
-        _cubes.Add(_cubePrefab);
+            cube.Initialize(_cube.gameObject.transform.localScale, Random.ColorHSV());
+            cube.transform.position = new Vector3(i + _maxAmountSpawnCube, _minAmountSpawnCube, _maxAmountSpawnCube + i);
+        }
     }
 
-    private void Create(GameObject createObject)
+    private void Create(Cube createObject)
     {
-        GameObject cube = Instantiate(createObject);
-        cube.transform.localScale = createObject.transform.localScale * _splitScale;
-        cube.GetComponent<Cube>().SetNewSplitChance(createObject.GetComponent<Cube>().GetSplitChance() / _splitDivider);
-        cube.GetComponent<Renderer>().material.color = Random.ColorHSV();
+        Color color = Random.ColorHSV();
+        Vector3 scale = createObject.transform.localScale * _splitScale;
 
-        _cubes.Add(cube);
+        float splitChance = createObject.GetSplitChance() / _splitDivider;
+
+        Cube cube = Instantiate(createObject);
+        cube.Initialize(scale, color, splitChance);
     }
 }

@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeDetonarot : MonoBehaviour
+public class CubeDetonator : MonoBehaviour
 {
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
 
-    public void Explosion(GameObject detonarotObject)
+    public void Explosion(Cube detonarotObject)
     {
-        foreach (Rigidbody exploisionObjects in GetExplosionObjects(detonarotObject))
+        foreach (Rigidbody exploisionObjects in GetExplosionObjects(detonarotObject.gameObject))
         {
             exploisionObjects.AddExplosionForce(_explosionForce, detonarotObject.transform.position, _explosionRadius);
         }

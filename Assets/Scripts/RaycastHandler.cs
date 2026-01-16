@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class RaycastHandler : MonoBehaviour
 {
     [SerializeField] private CubeSpawner _spawner;
-    [SerializeField] private CubeDetonarot _detonarot;
+    [SerializeField] private CubeDetonator _detonarot;
     [SerializeField] private RaycastClick _click;
 
     private void OnEnable()
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         _click.RaycastObjectHit += PullsStrings;
     }
 
-    private void PullsStrings(GameObject objectHit)
+    private void PullsStrings(Cube objectHit)
     {
         if (CalculateChanceSpawnObjects(objectHit))
         {
@@ -30,11 +30,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool CalculateChanceSpawnObjects(GameObject objectSpawn)
+    private bool CalculateChanceSpawnObjects(Cube objectSpawn)
     {
-        if (UserUtils.GenerateFloatRandomNumber() <= objectSpawn.GetComponent<Cube>().GetSplitChance())
-            return true;
-        
-        return false;
+        return UserUtils.GenerateFloatRandomNumber() <= objectSpawn.GetSplitChance();
     }
 }
