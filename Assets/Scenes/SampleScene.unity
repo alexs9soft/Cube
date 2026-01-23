@@ -688,6 +688,9 @@ GameObject:
   - component: {fileID: 1145564656}
   - component: {fileID: 1145564655}
   - component: {fileID: 1145564654}
+  - component: {fileID: 1145564657}
+  - component: {fileID: 1145564659}
+  - component: {fileID: 1145564658}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -724,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RaycastClick
   _camera: {fileID: 330585545}
   _maxDistance: 20
-  _reader: {fileID: 0}
+  _reader: {fileID: 1145564657}
 --- !u!114 &1145564654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,8 +755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1065443bb1cc24c80fce181963d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeDetonarot
-  _explosionRadius: 1
-  _explosionForce: 300
+  _explosionRadius: 20
+  _explosionForce: 700
 --- !u!114 &1145564656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,11 +769,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037dece648cec824186b71d2c86c319e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeSpawner
-  _splitScale: 0.5
-  _splitDivider: 2
   _minAmountSpawnCube: 2
   _maxAmountSpawnCube: 7
-  _cube: {fileID: 0}
+  _cubeFactory: {fileID: 1145564658}
+--- !u!114 &1145564657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145564650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7face6b91e564949b66097f34182bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputReader
+--- !u!114 &1145564658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145564650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd1571bec06e345b856b167f5a02da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeFactory
+  _cube: {fileID: 2107327221}
+  _splitScale: 0.5
+  _splitDivider: 2
+--- !u!54 &1145564659
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145564650}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2051153841
 GameObject:
   m_ObjectHideFlags: 0

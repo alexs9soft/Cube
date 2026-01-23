@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent (typeof(Renderer))]
 public class Cube : MonoBehaviour
 {
     [SerializeField] private float _splitChance;
@@ -13,9 +14,4 @@ public class Cube : MonoBehaviour
     }
 
     public float GetSplitChance() => _splitChance;
-
-    public void SetNewSplitChance(float value)
-    { 
-        _splitChance = value;
-    }
 }

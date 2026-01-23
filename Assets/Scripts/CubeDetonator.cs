@@ -1,22 +1,34 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class CubeDetonator : MonoBehaviour
 {
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
         
-    public void Explosion(List<Cube> detonarotObject)
+    public void Explosion(Cube explosionCube)
     {
-        foreach (Rigidbody exploisionObjects in GetExplosionObjects(detonarotObject))
+        foreach (Rigidbody exploisionObjects in GetExplosionObjects(explosionCube))
         {
-            exploisionObjects.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+            exploisionObjects.AddExplosionForce(_explosionForce, explosionCube.transform.position, _explosionRadius);
         }
     }
 
-    private List<Rigidbody> GetExplosionObjects(List<Cube> detonarotObject)
+    private List<Rigidbody> GetExplosionObjects(Cube cube)
     {
-        return detonarotObject.Select(cube => cube.GetComponent<Rigidbody>()).ToList(); 
+        Collider[] hits = Physics.OverlapSphere(cube.transform.position, _explosionRadius);
+
+        List<Rigidbody> cubes = new List<Rigidbody>();
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.attachedRigidbody != null)
+            {
+                cubes.Add(hit.attachedRigidbody);
+            }
+        }
+
+        return cubes;
     }
 }
