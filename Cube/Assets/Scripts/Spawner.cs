@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Spawner : MonoBehaviour
 { 
@@ -6,8 +7,38 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private float _spawnHeight;
     [SerializeField] private float _spawnInterval;
+    [SerializeField] private int _poolMaxSize;
+    [SerializeField] private int _poolCapacity;
 
-    public float GetSpawnInterval () => _spawnInterval;
+    [SerializeField] private Cube _prefab;
+
+    [SerializeField] private float _timer;
+
+    private ObjectPool<Cube> _pool;
+
+    private void Awake()
+    {
+        _pool = new ObjectPool<Cube>(
+            createFunc: CreateCube,
+            actionOnGet: (cube) => OnGet(cube),
+            actionOnRelease: (cube) => cube.gameObject.SetActive(false),
+            actionOnDestroy: (obj) => Destroy(obj),
+            collectionCheck: true,
+            defaultCapacity: _poolCapacity,
+            maxSize: _poolMaxSize
+        );
+    }
+
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+
+        if (_timer >= _spawnInterval)
+        {
+            SpawnCube();
+            _timer = 0f;
+        }
+    }
 
     public Vector3 GetRandomSpawnPosition()
     {
@@ -15,5 +46,41 @@ public class Spawner : MonoBehaviour
         float positionZ = Random.Range(0f, _terrain.terrainData.size.z);
 
         return new Vector3(positionX, _spawnHeight, positionZ);
+    }
+
+    private Cube CreateCube()
+    {
+        Cube cube = Instantiate(_prefab);
+        cube.Initialize();
+
+        return cube;
+    }
+
+    private void SpawnCube()
+    {
+        Cube cube = _pool.Get();
+    }
+
+    private void OnGet(Cube cube)
+    {
+        cube.transform.position = GetRandomSpawnPosition();
+        cube.gameObject.SetActive(true);
+
+        cube.DestroyTime += OnRelease;
+    }
+
+    public void OnRelease(Cube cube)
+    {
+        cube.gameObject.SetActive(false);
+        cube.SetDefaultSettings();
+
+        ReturnToPool(cube);
+    }
+
+    private void ReturnToPool(Cube cube)
+    {
+        _pool.Release(cube);
+
+        cube.DestroyTime -= OnRelease;
     }
 }

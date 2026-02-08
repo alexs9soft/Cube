@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer), typeof(Rigidbody))]
 public class Cube : MonoBehaviour
 {
     [SerializeField] private float _minLifeTime;
@@ -9,44 +10,44 @@ public class Cube : MonoBehaviour
     [SerializeField] private float _delay;
     [SerializeField] private Color _startColor;
 
-    private Coroutine _coroutine;
+    private Renderer _renderer;
+    private Rigidbody _rigidbody;
 
     private bool _isColorChange = true;
     private float _timeDestroy;
 
-    public event Action<Cube> OnDestroyTime;
+    public event Action<Cube> DestroyTime;
+
+    private void Awake()
+    {
+        _renderer = GetComponent<Renderer>();
+        _rigidbody = GetComponent<Rigidbody>();
+    }
 
     public void Initialize()
     {
-        this.GetComponent<Renderer>().material.color = _startColor;
+        _renderer.material.color = _startColor;
         _timeDestroy = UnityEngine.Random.Range(_minLifeTime, _maxLifeTime);
     }
 
     public void SetDefaultSettings()
     {
         _isColorChange = true;
-        this.GetComponent<Renderer>().material.color = _startColor;
+        _renderer.material.color = _startColor;
+
+        gameObject.transform.position = Vector3.zero;
+        gameObject.transform.rotation = Quaternion.identity;
+
+        _rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.linearVelocity = Vector3.zero;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isColorChange)
+        if (collision.gameObject.TryGetComponent<Platform>(out _) && _isColorChange == true)
         {
             this.GetComponent<Renderer>().material.color = UnityEngine.Random.ColorHSV();
             _isColorChange = false;
-        }
-
-        StartCount();
-    }
-
-    private void StartCount()
-    {
-        if (_coroutine != null)
-        {
-            StopCoroutine(_coroutine);
-
-            _coroutine = null;
-            return;
         }
 
         StartCoroutine(CountTimer());
@@ -56,11 +57,8 @@ public class Cube : MonoBehaviour
     {
         var wait = new WaitForSeconds(_delay);
 
-        for (int i = 0; i < _timeDestroy; i++)
-        {
-            yield return wait;
-        }
+        yield return wait;
         
-        OnDestroyTime?.Invoke(this);
+        DestroyTime?.Invoke(this);
     }
 }
