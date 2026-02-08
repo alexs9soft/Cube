@@ -35,8 +35,8 @@ public class Cube : MonoBehaviour
         _isColorChange = true;
         _renderer.material.color = _startColor;
 
-        gameObject.transform.position = Vector3.zero;
-        gameObject.transform.rotation = Quaternion.identity;
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
 
         _rigidbody.angularVelocity = Vector3.zero;
         _rigidbody.linearVelocity = Vector3.zero;
@@ -46,7 +46,7 @@ public class Cube : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Platform>(out _) && _isColorChange == true)
         {
-            this.GetComponent<Renderer>().material.color = UnityEngine.Random.ColorHSV();
+            _renderer.material.color = UnityEngine.Random.ColorHSV();
             _isColorChange = false;
         }
 

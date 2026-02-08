@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -7,13 +8,13 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private float _spawnHeight;
     [SerializeField] private float _spawnInterval;
+
     [SerializeField] private int _poolMaxSize;
     [SerializeField] private int _poolCapacity;
 
     [SerializeField] private Cube _prefab;
 
-    [SerializeField] private float _timer;
-
+    private Coroutine _coroutine;
     private ObjectPool<Cube> _pool;
 
     private void Awake()
@@ -29,15 +30,9 @@ public class Spawner : MonoBehaviour
         );
     }
 
-    private void Update()
+    private void Start()
     {
-        _timer += Time.deltaTime;
-
-        if (_timer >= _spawnInterval)
-        {
-            SpawnCube();
-            _timer = 0f;
-        }
+        _coroutine = StartCoroutine(SpawnTimer());
     }
 
     public Vector3 GetRandomSpawnPosition()
@@ -82,5 +77,17 @@ public class Spawner : MonoBehaviour
         _pool.Release(cube);
 
         cube.DestroyTime -= OnRelease;
+    }
+
+    private IEnumerator SpawnTimer()
+    {
+        var wait = new WaitForSeconds(_spawnInterval);
+
+        while (enabled)
+        {
+            SpawnCube();
+
+            yield return wait;
+        }
     }
 }
