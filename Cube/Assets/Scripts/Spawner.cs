@@ -14,7 +14,6 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private Cube _prefab;
 
-    private Coroutine _coroutine;
     private ObjectPool<Cube> _pool;
 
     private void Awake()
@@ -32,7 +31,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        _coroutine = StartCoroutine(SpawnTimer());
+        StartCoroutine(SpawnTimer());
     }
 
     public Vector3 GetRandomSpawnPosition()
