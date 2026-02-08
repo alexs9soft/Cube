@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour
         cube.DestroyTime += OnRelease;
     }
 
-    public void OnRelease(Cube cube)
+    private void OnRelease(Cube cube)
     {
         cube.gameObject.SetActive(false);
         cube.SetDefaultSettings();
