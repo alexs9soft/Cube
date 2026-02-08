@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
             createFunc: CreateCube,
             actionOnGet: (cube) => OnGet(cube),
             actionOnRelease: (cube) => cube.gameObject.SetActive(false),
-            actionOnDestroy: (obj) => Destroy(obj),
+            actionOnDestroy: (obj) => Destroy(obj.gameObject),
             collectionCheck: true,
             defaultCapacity: _poolCapacity,
             maxSize: _poolMaxSize
