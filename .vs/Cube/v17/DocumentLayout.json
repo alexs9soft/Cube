@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|d:\\ijun\\unity\\cube\\cube\\cube\\cube\\assets\\scripts\\cubefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cubefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\cubespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cubespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\raycasthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\raycasthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\cubedetonator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cubedetonator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\assets\\scripts\\raycastclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A43657F2-DFD0-F1AD-69C5-B86E0C471339}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\raycastclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CubeFactory.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeFactory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CubeFactory.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeFactory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CubeFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T17:33:43.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InputReader.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\InputReader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InputReader.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\InputReader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InputReader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T15:03:48.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RaycastHandler.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\RaycastHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RaycastHandler.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\RaycastHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RaycastHandler.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T14:42:47.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cube.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\Cube.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Cube.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\Cube.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Cube.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T14:30:51.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CubeDetonator.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeDetonator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CubeDetonator.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeDetonator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CubeDetonator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T14:30:47.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RaycastClick.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\RaycastClick.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RaycastClick.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\RaycastClick.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RaycastClick.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T13:57:41.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CubeSpawner.cs",
+              "DocumentMoniker": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CubeSpawner.cs",
+              "ToolTip": "D:\\iJun\\unity\\Cube\\Cube\\Cube\\Cube\\Assets\\Scripts\\CubeSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CubeSpawner.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T10:28:37.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
