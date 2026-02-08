@@ -7,7 +7,6 @@ public class Cube : MonoBehaviour
 {
     [SerializeField] private float _minLifeTime;
     [SerializeField] private float _maxLifeTime;
-    [SerializeField] private float _delay;
     [SerializeField] private Color _startColor;
 
     private Renderer _renderer;
@@ -55,7 +54,7 @@ public class Cube : MonoBehaviour
 
     private IEnumerator CountTimer()
     {
-        var wait = new WaitForSeconds(_delay);
+        var wait = new WaitForSeconds(_timeDestroy);
 
         yield return wait;
         
